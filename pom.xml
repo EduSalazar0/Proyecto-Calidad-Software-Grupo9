@@ -23,7 +23,6 @@
     </properties>
 
     <dependencies>
-        <!-- JUnit 5, para las pruebas unitarias (siguiente paso del plan de accion) -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -52,13 +51,6 @@
                     </archive>
                 </configuration>
             </plugin>
-
-            <!--
-                Los plugins de Checkstyle, PMD, SpotBugs y JaCoCo se
-                agregaran en la fase de "Configuracion de herramientas"
-                del plan de accion (responsables: Yuliana Capito y
-                Joao Conde), junto con el pipeline de GitHub Actions.
-            -->
         </plugins>
     </build>
 </project>

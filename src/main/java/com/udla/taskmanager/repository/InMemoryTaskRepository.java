@@ -8,7 +8,7 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Implementacion de TaskRepository que almacena las tareas en memoria.
+ *
  *
  * Es una entre varias implementaciones posibles del contrato
  * TaskRepository; puede sustituirse por otra (por ejemplo, una que

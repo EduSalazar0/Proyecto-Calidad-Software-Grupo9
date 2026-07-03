@@ -25,25 +25,40 @@ jobs:
         run: mvn -B clean verify
 
       - name: Publicar reporte de JaCoCo
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: jacoco-report
           path: target/site/jacoco/
 
       - name: Publicar reporte de Checkstyle
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: checkstyle-report
           path: target/checkstyle-result.xml
 
       - name: Publicar reporte de PMD
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: pmd-report
           path: target/pmd.xml
 
       - name: Publicar reporte de SpotBugs
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: spotbugs-report
           path: target/spotbugsXml.xml
+
+      - name: Resumen de resultados
+        if: always()
+        run: |
+          echo "## Resultados del build" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Pruebas unitarias:** ver detalle en el log de surefire" >> $GITHUB_STEP_SUMMARY
+          echo "- **Checkstyle:** reporte disponible como artefacto" >> $GITHUB_STEP_SUMMARY
+          echo "- **PMD:** reporte disponible como artefacto" >> $GITHUB_STEP_SUMMARY
+          echo "- **SpotBugs:** reporte disponible como artefacto" >> $GITHUB_STEP_SUMMARY
+          echo "- **JaCoCo:** reporte HTML disponible como artefacto" >> $GITHUB_STEP_SUMMARY

@@ -32,7 +32,7 @@
     <rule ref="category/java/errorprone.xml">
         <exclude name="AvoidLiteralsInIfCondition"/>
     </rule>
-    <rule ref="category/java/errorprone.xml/AvoidCatchingGenericException"/>
+    <rule ref="category/java/design.xml/AvoidCatchingGenericException"/>
     <rule ref="category/java/errorprone.xml/EmptyCatchBlock"/>
     <rule ref="category/java/errorprone.xml/AvoidDuplicateLiterals"/>
 
